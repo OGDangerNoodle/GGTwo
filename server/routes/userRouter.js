@@ -6,7 +6,7 @@ const route = express.Router();
 route.post('/login', 
   userController.verifyUser, 
   (req, res) => {
-    console.log(res.locals.username)
+    console.log('from userRouter:', res.locals.username)
     res.status(200).json(res.locals.username)
 });
 

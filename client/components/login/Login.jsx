@@ -13,6 +13,7 @@ const Login = () => {
     e.preventDefault();
     // targets the input buttons value to determine if login or signup
     if (e.target.value === 'Login') {
+
       fetch('/user/login/', {
         method: 'POST',
         body: JSON.stringify({username, password}),
@@ -22,9 +23,8 @@ const Login = () => {
         .then(data => {
           // set up context here?
           setRedirect(true);
-        }).catch(
-          (err) => console.log(err)
-          )
+        }).catch((err) => console.log(err)
+        )
         } else {
           fetch('/user/signup', {
             method: 'POST',
@@ -35,7 +35,7 @@ const Login = () => {
           .then(data => {
             // using function from userContext.js to dynamically update 
             // the context for use in other components
-            updateUser(data)
+            setUsername(data)
             // reset redirect boolean to take user to dashboard
             setRedirect(true); 
           })
@@ -52,9 +52,10 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <h1>GG</h1>
-      <form>
+    <div id="signin">
+      <em id="title">GG2</em>
+      <em><strong>Your</strong> hub for game reviews</em>
+      <form id="form">
         <input
           onChange={(e) => setUsername(e.target.value)}
           type="text"

@@ -1,4 +1,4 @@
-const db = require('../db/database.js');
+const db = require('../../server/db/database.js');
 const bcrypt = require('bcrypt');
 const saltRounds = 13;
 
@@ -8,6 +8,7 @@ const userController = {}
 userController.createUser = (req, res, next) => {
   // request body should have username and password
   const { username, password } = req.body;
+  console.log(username, password)
   // hash function accepts password and turns it into an encrypted version of pw and stores it in the hash variable
   bcrypt.hash(password, saltRounds, function(err, hash) {
     // error handling

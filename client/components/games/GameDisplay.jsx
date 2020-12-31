@@ -1,6 +1,8 @@
 // import stuff
 import React, { useState, useEffect } from 'react';
+import { Redirect, Link} from 'react-router-dom';
 import Game from './Game.jsx'
+import Reviews from './Reviews.jsx';
 import '../../public/styles.css'
 
 const GameDisplay = () => {
@@ -28,10 +30,15 @@ const GameDisplay = () => {
       return <Game key={`game-id-${game._id}`} {...game} />
     })
   }
+
+
+  // const handleClick = () => {
+  //   return <Redirect to="/reviews" />
+  // }
   
   return (
     <div id='gameDisplay'>
-      <button>See Reviews</button>
+      <Link to="/reviews">See Reviews</Link>
       {renderGames()}
     </div>
   );

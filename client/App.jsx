@@ -8,6 +8,8 @@ import { Route, Switch } from 'react-router-dom';
 import Login from './components/login/Login.jsx';
 import Dashboard from './components/games/Dashboard.jsx';
 import UserPage from './components/user/userPage.jsx';
+import Reviews from './components/games/Reviews.jsx';
+// <Route exact path="/reviews" component={Reviews} />
 
 export default function App() {
 
@@ -17,7 +19,10 @@ export default function App() {
     <div>
       <Switch>
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route path='/user/:id'>
+        <Route exact path="/reviews">
+          <Reviews />
+        </Route>
+         <Route path='/user/:id'>
           <UserPage />
         </Route>
         <Route path="/">

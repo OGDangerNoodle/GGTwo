@@ -5,11 +5,9 @@ import CreateGame from './CreateGame.jsx';
 
 const Dashboard = () => {
   
-
-
   return (
     <div>
-      <h1>Welcome to GoodGame Reviews</h1>
+      <h1>Welcome to GoodGame</h1>
       <CreateGame />
       <GameDisplay />
     </div>
